@@ -1,0 +1,6 @@
+framework module Pods_RxSwift_RW_DevCon {
+  umbrella header "Pods-RxSwift RW DevCon-umbrella.h"
+
+  export *
+  module * { export * }
+}
