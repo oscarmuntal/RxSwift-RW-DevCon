@@ -7,5 +7,6 @@ target 'RxSwift RW DevCon' do
 
   # Pods for RxSwift RW DevCon
   pod 'RxSwift'
+  pod 'RxCocoa'
 
 end
