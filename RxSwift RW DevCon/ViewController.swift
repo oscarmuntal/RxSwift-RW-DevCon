@@ -11,7 +11,7 @@ import RxCocoa
 
 class ViewController: UIViewController {
     fileprivate let bag = DisposeBag()
-    fileprivate let allSymbols = ["RZW 💖", "UDP", "MTT 💖", "ZKQ", "IPK 💖t", "AQÜ"]
+    fileprivate let allSymbols = ["RZW 💖", "UDP", "MTT 💖", "ZKQ", "IPK 💖", "AQÜ"]
     fileprivate let allPrices = BehaviorRelay<[StockPrice]>(value: [])
     fileprivate let prices = BehaviorRelay<[StockPrice]>(value: [])
     
