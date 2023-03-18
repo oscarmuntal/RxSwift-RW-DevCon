@@ -11,7 +11,7 @@ import RxCocoa
 
 class ViewController: UIViewController {
     fileprivate let bag = DisposeBag()
-    fileprivate let allSymbols = ["RZW", "UDP", "MTT", "ZKQ", "IPK", "AQÜ"]
+    fileprivate let allSymbols = ["RZW 💖", "UDP", "MTT 💖", "ZKQ", "IPK 💖t", "AQÜ"]
     fileprivate let allPrices = BehaviorRelay<[StockPrice]>(value: [])
     fileprivate let prices = BehaviorRelay<[StockPrice]>(value: [])
     
@@ -36,10 +36,22 @@ private extension ViewController {
         Observable.combineLatest(
             allPrices.asObservable(),
             favoritesSwitch.rx.isOn,
-            searchTerm.rx.text) { currentPrices, onlyFavorite, search in
-                print("\(currentPrices) \(onlyFavorite) \(String(describing: search))")
+            searchTerm.rx.text) { currentPrices, onlyFavorites, search in
+                
+                return currentPrices.filter { price -> Bool in
+                    return shouldDisplayPrice(price: price,
+                                              onlyFavorites: onlyFavorites,
+                                              search: search)
+                }
             }
-            .subscribe()
+            .bind(to: prices)
+            .disposed(by: bag)
+        
+        prices.asObservable()
+            .subscribe(onNext: { [weak self] value in
+                self?.tableView.reloadData()
+            })
+            .disposed(by: bag)
     }
 }
 
