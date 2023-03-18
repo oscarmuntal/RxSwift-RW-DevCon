@@ -36,7 +36,3 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-
-struct StockPrice {
-    
-}
