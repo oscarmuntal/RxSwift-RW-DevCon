@@ -26,14 +26,20 @@ class ViewController: UIViewController {
             return StockPrice(symbol: symbol, favorite: index % 2 == 0)
         }
         allPrices.accept(all)
-        prices.accept(allPrices.value)
+        
         bindUI()
     }
 }
 
 private extension ViewController {
     func bindUI() {
-        
+        Observable.combineLatest(
+            allPrices.asObservable(),
+            favoritesSwitch.rx.isOn,
+            searchTerm.rx.text) { currentPrices, onlyFavorite, search in
+                print("\(currentPrices) \(onlyFavorite) \(String(describing: search))")
+            }
+            .subscribe()
     }
 }
 
