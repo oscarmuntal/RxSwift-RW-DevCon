@@ -22,17 +22,51 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let all = allSymbols.enumerated().map { index, symbol in
+            return StockPrice(symbol: symbol, favorite: index % 2 == 0)
+        }
+        allPrices.accept(all)
+        prices.accept(allPrices.value)
+        bindUI()
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+private extension ViewController {
+    func bindUI() {
+        
+    }
+}
+
+extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        prices.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = dequeueReusableCell(withIdentifier: "cell", for: indexPath) as CustomTableViewCell else { fatalError() }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StockCell") as! StockCell
+        let price = prices.value[indexPath.row]
+        cell.update(with: price)
         return cell
     }
+}
+
+fileprivate func shouldDisplayPrice(price: StockPrice, onlyFavorites: Bool, search: String?) -> Bool {
+    if onlyFavorites && !price.isFavorite {
+        return false
+    }
+    if let search = search,
+       !search.isEmpty,
+       !price.symbol.contains(search) {
+        return false
+    }
+    return true
+}
+
+fileprivate func update(prices: [StockPrice], with newPrices: [String: Double]) -> [StockPrice] {
+    for (key, newPrice) in newPrices {
+        if let stockPrice = prices.filter({ $0.symbol == key }).first {
+            stockPrice.update(newPrice)
+        }
+    }
+    return prices
 }

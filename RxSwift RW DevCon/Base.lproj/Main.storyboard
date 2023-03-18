@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HsB-XW-jt2">
-                                <rect key="frame" x="20" y="88" width="374" height="70"/>
+                                <rect key="frame" x="20" y="88" width="374" height="75"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qki-Sg-5Ex">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="70"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qki-Sg-5Ex">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show only favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9A-5f-oGd">
                                                 <rect key="frame" x="0.0" y="0.0" width="187" height="32.5"/>
@@ -29,21 +29,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64z-KV-RvF">
-                                                <rect key="frame" x="0.0" y="37.5" width="187" height="32.5"/>
+                                                <rect key="frame" x="0.0" y="42.5" width="187" height="32.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rcV-gE-Pz6">
-                                        <rect key="frame" x="187" y="0.0" width="187" height="70"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rcV-gE-Pz6">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="75"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DkO-ug-dna">
                                                 <rect key="frame" x="0.0" y="0.0" width="189" height="31"/>
                                             </switch>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="itV-gn-zTt">
-                                                <rect key="frame" x="0.0" y="36" width="187" height="34"/>
+                                                <rect key="frame" x="0.0" y="41" width="187" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -52,18 +52,18 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7to-dT-NyO">
-                                <rect key="frame" x="0.0" y="166" width="414" height="696"/>
+                                <rect key="frame" x="0.0" y="171" width="414" height="691"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WcR-3z-uud">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="21"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StockCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StockCell" id="WcR-3z-uud" customClass="StockCell" customModule="RxSwift_RW_DevCon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WcR-3z-uud" id="h61-Ef-WyN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="HJh-22-xwq">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="21"/>
+                                                    <rect key="frame" x="20" y="10" width="374" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEE-YK-k1i">
                                                             <rect key="frame" x="0.0" y="0.0" width="41.5" height="21"/>
@@ -81,12 +81,16 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="HJh-22-xwq" firstAttribute="top" secondItem="h61-Ef-WyN" secondAttribute="top" id="Iyu-Kf-c6m"/>
+                                                <constraint firstItem="HJh-22-xwq" firstAttribute="top" secondItem="h61-Ef-WyN" secondAttribute="top" constant="10" id="Iyu-Kf-c6m"/>
                                                 <constraint firstAttribute="trailing" secondItem="HJh-22-xwq" secondAttribute="trailing" constant="20" id="Lhl-Sa-e1b"/>
-                                                <constraint firstAttribute="bottom" secondItem="HJh-22-xwq" secondAttribute="bottom" id="ZAO-6e-1qb"/>
+                                                <constraint firstAttribute="bottom" secondItem="HJh-22-xwq" secondAttribute="bottom" constant="10" id="ZAO-6e-1qb"/>
                                                 <constraint firstItem="HJh-22-xwq" firstAttribute="leading" secondItem="h61-Ef-WyN" secondAttribute="leading" constant="20" id="bWf-zf-4CY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="price" destination="XLv-kf-ebY" id="32s-Tg-BbH"/>
+                                            <outlet property="symbol" destination="yEE-YK-k1i" id="LC0-m5-kYf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
